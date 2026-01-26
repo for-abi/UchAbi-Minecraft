@@ -18,7 +18,7 @@ body {
   justify-content: center;
 }
 
-  /* CARD STYLING */
+/* CARD STYLING */
 .card {
   width: 330px;
   min-height: 460px;
@@ -34,3 +34,69 @@ body {
   transition: transform 0.3s ease;
   font-family: 'Pacifico', cursive; /* Font for card titles & text */
 }
+
+/* Add tiny floating hearts to each paragraph automatically */
+.card p::after {
+  content: " 💗";
+  animation: floatHearts 2s infinite alternate;
+}
+
+@keyframes floatHearts {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
+
+/* COUNTER */
+#counter {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+
+/* IMAGE AREA */
+#images img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 10px auto;
+  display: block;
+  box-shadow: 0 0 15px rgba(0,255,180,0.4);
+}
+
+/* HEART SHAPE (optional fallback) */
+.heart {
+  width: 90px;
+  height: 90px;
+  margin: 10px auto;
+  background: pink;
+  clip-path: polygon(
+    50% 90%,
+    100% 40%,
+    75% 10%,
+    50% 25%,
+    25% 10%,
+    0 40%
+  );
+}
+
+/* TAP TEXT */
+.tap {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+    body, .card, h2, p {
+  font-family: 'Macondo', cursive !important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="card">
+  <h2 id="title">Hello Abi, I love you so much 💜</h2>
+
+  <div id="images">
+    <div class="heart"></div>
+  </div>
