@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
-<title>Abi, I love you 💜</title>
+<title>For Abi 💜</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Macondo', cursive;
-  color: white;
   margin: 0;
   height: 100vh;
+  font-family: 'Quicksand', sans-serif;
   background: linear-gradient(135deg, #2b1247, #0b1f17);
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  overflow: hidden;
+  color: white;
 }
 
-/* animated glow */
-body::before {
-  content: "";
+.glow {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top, rgba(160,80,255,0.15), transparent 60%),
-    radial-gradient(circle at bottom, rgba(0,255,180,0.12), transparent 60%);
+    radial-gradient(circle at top, rgba(180,100,255,0.2), transparent 60%),
+    radial-gradient(circle at bottom, rgba(0,255,180,0.18), transparent 60%);
   animation: breathe 6s ease-in-out infinite;
-  pointer-events: none;
 }
 
 @keyframes breathe {
@@ -39,189 +38,130 @@ body::before {
   50% { opacity: 1; }
 }
 
-/* CARD */
 .card {
   position: relative;
   width: 340px;
-  min-height: 480px;
   background: linear-gradient(145deg, #4b1f6f, #1a3d2f);
-  border-radius: 24px;
+  border-radius: 26px;
   padding: 26px;
-  box-shadow: 0 0 40px rgba(0,255,180,0.35);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   text-align: center;
-  cursor: pointer;
+  box-shadow: 0 0 50px rgba(0,255,180,0.35);
   animation: pulse 4s infinite;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-  z-index: 1;
-}
-
-.card:active {
-  transform: scale(0.97);
+  z-index: 2;
 }
 
 @keyframes pulse {
-  0%,100% { box-shadow: 0 0 35px rgba(0,255,180,0.35); }
-  50% { box-shadow: 0 0 55px rgba(180,100,255,0.45); }
+  0%,100% { box-shadow: 0 0 40px rgba(0,255,180,0.35); }
+  50% { box-shadow: 0 0 65px rgba(180,100,255,0.45); }
 }
 
-.card.fade {
-  opacity: 0;
-  transform: scale(0.95);
+h1 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
-/* COUNTER */
-#counter {
-  font-size: 0.75rem;
-  opacity: 0.8;
+.gif {
+  width: 220px;
+  height: 220px;
+  margin: 14px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(180,100,255,0.5);
 }
 
-/* HEART IMAGES */
-#images img {
-  width: 95px;
-  height: 95px;
+.gif img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin: 10px auto;
-  display: block;
-  box-shadow: 0 0 18px rgba(0,255,180,0.45);
-  clip-path: path("M47.5 85 C10 55 0 40 0 25 C0 10 12 0 25 0 C35 0 45 10 47.5 15 C50 10 60 0 70 0 C83 0 95 10 95 25 C95 40 85 55 47.5 85 Z");
 }
 
-/* LYRIC */
-#lyric {
-  font-size: 0.7rem;
-  opacity: 0.65;
-  font-style: italic;
-  margin-top: 8px;
-  animation: lyricFade 1s ease;
+p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 12px 0;
 }
 
-@keyframes lyricFade {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 0.65; transform: translateY(0); }
+button {
+  margin-top: 14px;
+  background: linear-gradient(135deg, #a36bff, #2ee6b8);
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  color: #1b0f2a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* TAP */
-.tap {
-  font-size: 0.8rem;
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,180,0.6);
+}
+
+.heart {
+  position: absolute;
+  animation: float 6s linear infinite;
   opacity: 0.7;
 }
 
-/* FLOATING HEARTS */
-.heart-float {
-  position: absolute;
-  animation: floatUp 6s linear forwards;
-  pointer-events: none;
-}
-
-@keyframes floatUp {
-  from { transform: translateY(100vh); opacity: 0; }
-  to { transform: translateY(-10vh); opacity: 1; }
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="card" id="card">
-  <h2 id="title"></h2>
-  <div id="counter"></div>
+<div class="glow"></div>
 
-  <div id="images"></div>
+<div class="card">
+  <h1>Hey Abi 💜</h1>
 
-  <p id="text"></p>
-  <div id="lyric"></div>
+  <div class="gif">
+    <!-- CHANGE GIF LINK IF YOU WANT -->
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute gif">
+  </div>
 
-  <div class="tap">Tap to open</div>
+  <p id="message">
+    I know today might feel heavy…  
+    but you are **never alone**.  
+    I’m right here, always choosing you.
+  </p>
+
+  <button onclick="changeMessage()">Click me 🫶</button>
 </div>
 
 <script>
-const cards = [
-  {
-    title: "Abi, I love you 💜",
-    text: "You already know who this is from... Obviously, its me! I want us to forever be happy with each other, I'll do everything for that, my love.",
-    images: [],
-    lyric: "If loving you is weakness — I’ll stay weak forever."
-  },
-  {
-    title: "Abi, I love you 💚",
-    text: "I wish the words were enough to tell you how much I love you. That's impossible but I promise you, that I will do everything, EVERYTHING to always and forever keep you with me and make you the happiest girl in the universe, my love I love you SO MUCH!",
-    images: ["images/1.jpg.jpg"],
-    lyric: "You’re the calm in my chaos, the reason I breathe."
-  },
-  {
-    title: "Abi, I love you 💜",
-    text: "My love, I know sometimes I can be really jealous, but I promise you, it's because I love you so much. You showed me, you gave me the whole world just by coming into my life, you gave my life a purpose, you showed me what real, true love is and I will NEVER, EVER let something bad happen to us. No matter what happens, we're always gonna find a way to stay together and don't let anything get in our way. I'll do anything for you, I'll give you the whole world my love I can sacrifice everything for you, so we can still and always be together! <3",
-    images: ["images/2.jpg.jpg"],
-    lyric: "I’d burn the sky before I let you fall."
-  },
-  {
-    title: "Abi, I love you 💚",
-    text: "Even at the very beginning, I was feeling something with you. I loved how we both loved always spending time with each other, even at the very beginning. It feels like we were destined to be together since the very beginning of when we were born and even at the very beginning of when the universe was created. It felt like the 2 souls that are bound for each other, finally found each other and now there's no way of something to get in their way.",
-    images: ["images/3.jpg.jpg"],
-    lyric: "Two souls — one fight, one forever."
-  },
-  {
-    title: "Abi, I love you 💜",
-    text: "I promise you that no matter what happens, I'll always choose to be with you, always make you the happiest in the whole universe. If I need to sacrifice whole universe for you and to be with you, I'll do it. I'll do everything for you my love, my baby, my universe. ALWAYS and FOREVER TOGETHER.",
-    images: [],
-    lyric: "Forever isn’t long enough with you."
-  }
+const messages = [
+  "You don’t have to be strong right now. I’ve got you 💜",
+  "Bad moments don’t change how amazing you are 🌙",
+  "Even on your worst days, you’re still my favorite person 💚",
+  "Come here… imagine I’m hugging you really tight 🫂",
+  "You make my world softer just by existing ✨"
 ];
 
-let i = 0;
-
-const card = document.getElementById("card");
-const titleEl = document.getElementById("title");
-const textEl = document.getElementById("text");
-const imagesEl = document.getElementById("images");
-const counterEl = document.getElementById("counter");
-const lyricEl = document.getElementById("lyric");
-const tapEl = document.querySelector(".tap");
-
-function renderCard() {
-  const c = cards[i];
-  titleEl.innerText = c.title;
-  textEl.innerText = c.text;
-  lyricEl.innerText = c.lyric;
-
-  imagesEl.innerHTML = "";
-  c.images.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    imagesEl.appendChild(img);
-  });
-
-  const left = cards.length - i - 1;
-  counterEl.innerText = left > 0 ? `💌 ${left} cards left` : "";
-  tapEl.style.display = left > 0 ? "block" : "none";
+function changeMessage() {
+  const msg = document.getElementById("message");
+  msg.innerText = messages[Math.floor(Math.random() * messages.length)];
 }
-
-card.onclick = () => {
-  if (i < cards.length - 1) {
-    card.classList.add("fade");
-    setTimeout(() => {
-      i++;
-      renderCard();
-      card.classList.remove("fade");
-    }, 300);
-  }
-};
-
-renderCard();
 
 /* floating hearts */
 setInterval(() => {
   const h = document.createElement("div");
-  h.className = "heart-float";
+  h.className = "heart";
   h.innerText = Math.random() > 0.5 ? "💜" : "💚";
   h.style.left = Math.random() * 100 + "vw";
-  h.style.fontSize = Math.random() * 12 + 14 + "px";
+  h.style.fontSize = Math.random() * 10 + 16 + "px";
   document.body.appendChild(h);
   setTimeout(() => h.remove(), 6000);
-}, 900);
+}, 700);
 </script>
 
 </body>
