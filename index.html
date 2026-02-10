@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Abi 💜</title>
+<title>Abi 💜</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   height: 100vh;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Macondo', cursive;
   background: linear-gradient(135deg, #2b1247, #0b1f17);
   display: flex;
   align-items: center;
@@ -78,7 +76,7 @@ h1 {
 p {
   font-size: 0.9rem;
   opacity: 0.9;
-  margin: 12px 0;
+  margin: 14px 0;
 }
 
 button {
@@ -105,14 +103,8 @@ button:hover {
 }
 
 @keyframes float {
-  from {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(-10vh);
-    opacity: 1;
-  }
+  from { transform: translateY(100vh); opacity: 0; }
+  to { transform: translateY(-10vh); opacity: 1; }
 }
 </style>
 </head>
@@ -122,34 +114,43 @@ button:hover {
 <div class="glow"></div>
 
 <div class="card">
-  <h1>Hey Abi 💜</h1>
+  <h1>Abi 💜</h1>
 
   <div class="gif">
-    <!-- CHANGE GIF LINK IF YOU WANT -->
-    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute gif">
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
   </div>
 
-  <p id="message">
-    I know today might feel heavy…  
-    but you are **never alone**.  
-    I’m right here, always choosing you.
-  </p>
+  <p id="message"></p>
 
-  <button onclick="changeMessage()">Click me 🫶</button>
+  <button onclick="nextMessage()">Tap 🫶</button>
 </div>
 
 <script>
 const messages = [
-  "You don’t have to be strong right now. I’ve got you 💜",
-  "Bad moments don’t change how amazing you are 🌙",
-  "Even on your worst days, you’re still my favorite person 💚",
-  "Come here… imagine I’m hugging you really tight 🫂",
-  "You make my world softer just by existing ✨"
+  "I want us to forever be happy with each other.",
+  "I’ll do everything for that, my love.",
+  "I promise you that I will do everything to always keep you with me.",
+  "I want to make you the happiest girl in the universe.",
+  "You gave my life a purpose.",
+  "You showed me what real, true love is.",
+  "I will NEVER let something bad happen to us.",
+  "No matter what happens, we’ll always find a way to stay together.",
+  "I’ll do anything for you.",
+  "I’ll give you the whole world, my love.",
+  "It felt like two souls that were bound for each other finally found each other.",
+  "There’s no way anything can get in our way.",
+  "I’ll always choose to be with you.",
+  "My love for you is infinite.",
+  "Always and forever together."
 ];
 
-function changeMessage() {
-  const msg = document.getElementById("message");
-  msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+let index = 0;
+const msgEl = document.getElementById("message");
+msgEl.innerText = messages[0];
+
+function nextMessage() {
+  index = (index + 1) % messages.length;
+  msgEl.innerText = messages[index];
 }
 
 /* floating hearts */
